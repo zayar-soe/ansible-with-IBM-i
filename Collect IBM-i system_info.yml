@@ -1,0 +1,29 @@
+---
+- name: Gather IBM i system info and display key values
+  hosts: ibmi
+  gather_facts: no
+  collections:
+    - ibm.power_ibmi
+
+  vars:
+    ansible_connection: ssh
+
+  tasks:
+    - name: Collect IBM i system facts
+      ibm.power_ibmi.ibmi_facts: {}
+      register: ibmi_facts_result
+
+    - name: Show full fact result (for debugging)
+      debug:
+        var: ibmi_facts_result
+
+    - name: Display selected system information
+      debug:
+        msg: |
+          OS Name: {{ ibmi_facts_result.system_info.OS_NAME }}
+          Host Name: {{ ibmi_facts_result.system_info.HOST_NAME }}
+          OS Version: {{ ibmi_facts_result.system_info.OS_VERSION }}.{{ ibmi_facts_result.system_info.OS_RELEASE }}
+          Configured CPUs: {{ ibmi_facts_result.system_info.CONFIGURED_CPUS }}
+          Configured Memory (MB): {{ ibmi_facts_result.system_info.CONFIGURED_MEMORY }}
+          Total CPUs: {{ ibmi_facts_result.system_info.TOTAL_CPUS }}
+          Total Memory (MB): {{ ibmi_facts_result.system_info.TOTAL_MEMORY }}

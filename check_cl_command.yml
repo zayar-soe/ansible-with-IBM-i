@@ -1,0 +1,14 @@
+- name: Playbook with CL command
+  hosts: all
+  gather_facts: false
+
+  tasks:
+  - name: Check active jobs
+    ibm.power_ibmi.ibmi_cl_command:
+      cmd: WRKACTJOB OUTPUT(*PRINT)
+    register: job_status
+
+  - name: Fetch the job status report
+    ibm.power_ibmi.ibmi_spooled_file:
+      output_dir: /tmp
+      file_name: job_status_report.txt
