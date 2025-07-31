@@ -1,6 +1,8 @@
 - name: Playbook with CL command
   hosts: all
   gather_facts: false
+  collections:
+  - ibm.power_ibmi
 
   tasks:
   - name: Check active jobs
