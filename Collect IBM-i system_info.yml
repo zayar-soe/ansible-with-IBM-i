@@ -1,6 +1,6 @@
 ---
 - name: Gather IBM i system info and display key values
-  hosts: ibmi
+  hosts: IBMi_nodes
   gather_facts: no
   collections:
     - ibm.power_ibmi
@@ -27,3 +27,4 @@
           Configured Memory (MB): {{ ibmi_facts_result.system_info.CONFIGURED_MEMORY }}
           Total CPUs: {{ ibmi_facts_result.system_info.TOTAL_CPUS }}
           Total Memory (MB): {{ ibmi_facts_result.system_info.TOTAL_MEMORY }}
+
