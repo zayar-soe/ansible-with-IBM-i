@@ -5,8 +5,7 @@
   collections:
     - ibm.power_ibmi
 
-  vars:
-    ansible_connection: ssh
+
 
   tasks:
     - name: Collect IBM i system facts
@@ -27,4 +26,5 @@
           Configured Memory (MB): {{ ibmi_facts_result.system_info.CONFIGURED_MEMORY }}
           Total CPUs: {{ ibmi_facts_result.system_info.TOTAL_CPUS }}
           Total Memory (MB): {{ ibmi_facts_result.system_info.TOTAL_MEMORY }}
+
 
