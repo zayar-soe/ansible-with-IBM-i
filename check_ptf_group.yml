@@ -1,0 +1,14 @@
+---
+- name: Gather IBM i system info and display key values
+  hosts: IBMi_nodes
+  gather_facts: no
+  collections:
+    - ibm.power_ibmi
+
+
+  tasks:
+  - name: Check the PTF groups without certificate verification
+    ibm.power_ibmi.ibmi_fix_check:
+      groups:
+        - "*"
+      validate_certs: False
