@@ -8,4 +8,3 @@
   - name: List PTF
     ibm.power_ibmi.ibmi_cl_command:
       cmd: DSPPTF
-    register: job_status
