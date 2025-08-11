@@ -1,0 +1,11 @@
+- name: List PTF with CL command
+  hosts: all
+  gather_facts: false
+  collections:
+  - ibm.power_ibmi
+
+  tasks:
+  - name: List PTF
+    ibm.power_ibmi.ibmi_cl_command:
+      cmd: DSPPTF
+    register: job_status
