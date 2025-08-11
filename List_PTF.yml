@@ -7,5 +7,5 @@
   tasks:
   - name: List PTF
     ibm.power_ibmi.ibmi_cl_command:
-      cmd: 'DSPPTF'
-      is_cmd5250: True
+      cmd: 'DSPPTF OUTPUT(*PRINT)'
+      is_cmd5250: False
