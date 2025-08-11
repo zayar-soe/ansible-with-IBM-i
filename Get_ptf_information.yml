@@ -1,0 +1,12 @@
+---
+- hosts: all
+  gather_facts: false
+  collections:
+  - ibm.power_ibmi
+
+  tasks:
+    - name: Get PTF information
+      ibm.power_ibmi.ibmi_display_fix:
+        product: '5770999'
+        ptf: 'TL25107'
+        release: 'V7R4M0'
