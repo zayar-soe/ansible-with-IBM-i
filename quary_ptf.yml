@@ -1,0 +1,14 @@
+---
+- name: Query ptfs
+  hosts: IBMi_nodes
+  gather_facts: no
+  collections:
+    - ibm.power_ibmi
+
+
+  tasks:
+    - name: query ptf
+      ibm.power_ibmi.ibmi_fix:
+        operation: 'query'
+        fix_list:
+           - "*"
