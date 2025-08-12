@@ -13,7 +13,12 @@
   vars:
     ptfs_list_parm: "{{ ptfs_list }}"
 
+
   tasks:
+    - name: Wait 30 Mins before download
+      pause:
+        seconds: 1800
+        
     - name: Include fix_repo_check_download_individual_ptfs role to check and download a list of individual ptfs
       include_role:
         name: fix_repo_check_download_individual_ptfs
