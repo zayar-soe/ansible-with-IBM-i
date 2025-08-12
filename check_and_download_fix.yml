@@ -1,5 +1,8 @@
 - name: IBM i download a list of individual PTFs
   hosts: ibmi
+  collections:
+    - ibm.power_ibmi
+
 
   vars:
     repo_server: repo_server
