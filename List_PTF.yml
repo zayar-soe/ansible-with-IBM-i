@@ -1,5 +1,5 @@
 - name: List PTF with CL command
-  hosts: all
+  hosts: ibmi
   gather_facts: false
   collections:
   - ibm.power_ibmi
