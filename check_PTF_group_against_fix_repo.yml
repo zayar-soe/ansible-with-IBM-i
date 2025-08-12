@@ -1,5 +1,6 @@
 - name: IBM i check a set of groups
   hosts: ibmi
+  connection: local
   collections:
     - ibm.power_ibmi
 
