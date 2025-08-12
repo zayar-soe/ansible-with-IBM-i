@@ -1,5 +1,7 @@
 - name: IBM i check a set of groups
   hosts: ibmi
+  collections:
+    - ibm.power_ibmi
 
   vars:
     check_ptf_groups_against_fix_repo_type: "current"
