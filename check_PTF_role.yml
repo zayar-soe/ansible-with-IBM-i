@@ -1,10 +1,8 @@
 ---
 - name: IBM i check a set of PTFs
-  hosts: all
+  hosts: ibmi
   collections:
     - ibm.power_ibmi
-
-
 
   tasks:
     - name: check ptf status
