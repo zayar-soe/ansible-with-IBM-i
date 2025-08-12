@@ -1,5 +1,5 @@
 - name: IBM i download a list of individual PTFs
-  hosts: testhost
+  hosts: ibmi
 
   vars:
     repo_server: repo_server
