@@ -8,7 +8,7 @@
   tasks:
     - name: check ptf groups
       include_role:
-        name: check_ptf_groups
+        name: check_ptf_groups_against_fix_repo
 
     - name: print groups status
       debug:
