@@ -1,0 +1,15 @@
+- name: IBM i check a set of groups
+  hosts: ibmi
+
+  vars:
+    check_ptf_groups_against_fix_repo_type: "current"
+    check_ptf_groups_against_fix_repo_repo_server: "public.dhe.ibm.com"
+
+  tasks:
+    - name: check ptf groups
+      include_role:
+        name: check_ptf_groups
+
+    - name: print groups status
+      debug:
+        var: check_ptf_groups_against_fix_repo_group_status
