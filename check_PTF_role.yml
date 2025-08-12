@@ -4,11 +4,7 @@
   collections:
     - ibm.power_ibmi
 
-  vars:
-    check_ptf_list:
-      - {'ptf_id':'TL25107', 'product':'847427W', 'release': 'V7R4M0'}
-      - {'ptf_id':'RE24316', 'product':'847427W', 'release': 'V7R4M0'}
-      - {'ptf_id':'MJ05922', 'product':'847427W', 'release': 'V7R4M0'}
+
 
   tasks:
     - name: check ptf status
