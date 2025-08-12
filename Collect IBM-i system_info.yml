@@ -1,6 +1,6 @@
 ---
 - name: Gather IBM i system info and display key values
-  hosts: IBMi_nodes
+  hosts: ibmi
   gather_facts: no
   collections:
     - ibm.power_ibmi
@@ -14,6 +14,7 @@
     - name: Show full fact result (for debugging)
       debug:
         var: ibmi_facts_result
+
 
 
 
